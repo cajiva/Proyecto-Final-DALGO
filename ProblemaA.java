@@ -1,4 +1,6 @@
 import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 
 // PROBLEMA A
 
@@ -25,18 +27,56 @@ import java.io.BufferedReader;
                 r = Integer.parseInt(dataStr[1]);
                 m = Integer.parseInt(dataStr[2]);
 
+				int[][] matriz = new int[n][n];
                 for (int i = 0; i < n; i++) {
-                    int[][] matriz = new int[n][n];
                     line = br.readLine();
                     String [] sfila = line.split(" ");
                     matriz[i]= Arrays.stream(sfila).mapToInt(f->Integer.parseInt(f)).toArray();
                 }
-				int [] respuestas = instancia.procesarNumeros(numeros);
-				System.out.println(respuestas[0]+" "+respuestas[1]);
+
+				int[][] potencias = darPotencia(matriz, r, m);
+				
+				System.out.println();
+				System.out.println("Resultado:");
+				System.out.println();
+
+				for (int i = 0; i < potencias.length; i++) {
+					for (int j = 0; j < potencias.length; j++) {
+						System.out.print(potencias[i][j] + " ");
+					}
+					System.out.println();
+				}
+
 				line = br.readLine();
 			}
 		}
 	}
 
 
+	public static int[][] darPotencia(int[][] matriz, int r, int m )
+	{
+		int[][] potencia = new int[matriz.length][matriz.length];
+		potencia = Arrays.copyOf(matriz, matriz.length);
+
+		for (int i = 0; i < r - 1; i++) {
+			potencia = Arrays.copyOf(multipMatrices(potencia, matriz, m), matriz.length);
+		}
+		
+		return potencia;
+	}
+
+	public static int[][] multipMatrices(int[][] a, int[][] b, int m)
+	{
+		int[][] rta = new int[a.length][a.length];
+		for ( int i = 0; i < b.length; i++) {
+			for (int j = 0; j < b.length; j++) {
+				int temp = 0;
+				for (int k = 0; k < b.length; k++) {
+					temp += a[i][k] * b[k][j];
+				}
+				rta[i][j] = temp % m;
+			}
+		}
+		return rta;
+	}
  }
