@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch GeneradorB",
+            "request": "launch",
+            "mainClass": "GeneradorB",
+            "projectName": "Proyecto-Final-DALGO_3905d4d7"
+        },
+        {
+            "type": "java",
+            "name": "Launch GeneradorProblemaA",
+            "request": "launch",
+            "mainClass": "GeneradorProblemaA",
+            "projectName": "Proyecto-Final-DALGO_3905d4d7"
+        },
+        {
+            "type": "java",
+            "name": "Launch GFG",
+            "request": "launch",
+            "mainClass": "GFG",
+            "projectName": "Proyecto-Final-DALGO_3905d4d7"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProblemaB2",
+            "request": "launch",
+            "mainClass": "ProblemaB2",
+            "projectName": "Proyecto-Final-DALGO_3905d4d7"
+        },
+        {
+            "type": "java",
             "name": "Launch ProblemaA",
             "request": "launch",
             "mainClass": "ProblemaA",

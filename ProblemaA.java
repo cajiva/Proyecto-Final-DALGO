@@ -34,7 +34,7 @@ import java.util.Arrays;
                     matriz[i]= Arrays.stream(sfila).mapToInt(f->Integer.parseInt(f)).toArray();
                 }
 
-				int[][] potencias = instancia.darPotencia(matriz, r, m);
+				int[][] potencias = instancia.potenciar(matriz, r, m);
 				
 				System.out.println();
 				System.out.println("Resultado:");
@@ -78,6 +78,36 @@ import java.util.Arrays;
 		return potencia;
 	}
 
+	public int[][] potenciar (int [][] matriz, int r, int m)
+	{
+		int[][] potencia = new int[matriz.length][matriz.length];
+
+		for (int i = 0; i < potencia.length; i++) {
+			for (int j = 0; j < potencia.length; j++) {
+				if (i == j)
+					potencia[i][j] = 1;
+
+				else
+					potencia[i][j] = 0;
+			}
+		}
+
+		while (r > 0) {
+
+			if(r % 2 == 1)
+				potencia = Arrays.copyOf(multipMatrices(potencia, matriz, m), matriz.length);
+
+			matriz = Arrays.copyOf(multipMatrices(matriz, matriz, m), matriz.length);
+
+			r = r/2; 
+		}
+
+		return potencia;
+	}
+
+
+
+
 	public int[][] multipMatrices(int[][] a, int[][] b, int m)
 	{
 		int[][] rta = new int[a.length][a.length];
@@ -92,4 +122,5 @@ import java.util.Arrays;
 		}
 		return rta;
 	}
+
  }

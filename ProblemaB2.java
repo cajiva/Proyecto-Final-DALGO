@@ -16,7 +16,7 @@ public class ProblemaB2 {
 		) { 
 			String line = br.readLine();
 				
-			while(line!=null && line.length()>0 && !"0".equals(line)) {
+			while(line!=null && line.length()>0 && !"0 0".equals(line)) {
 				final String [] dataStr = line.split(" ");
                 n = Integer.parseInt(dataStr[0]);
                 p = Integer.parseInt(dataStr[1]);
@@ -24,7 +24,8 @@ public class ProblemaB2 {
                 String [] tareas = line.split(" ");
 				int[] tiempos = Arrays.stream(tareas).mapToInt(f->Integer.parseInt(f)).toArray();
                 
-                System.out.println("Rta: "+instancia.asignar(p, n, tiempos));
+                // System.out.println("Rta: "+instancia.asignar(p, n, tiempos));
+                System.out.println(instancia.asignar(p, n, tiempos));
 
 				line = br.readLine();
 			}
@@ -46,7 +47,7 @@ public class ProblemaB2 {
         double avg = sum/p;
 
         for (int i = 0; i < p; i++) {
-            ArrayList t = new ArrayList<Integer>();
+            ArrayList<Integer> t = new ArrayList<Integer>();
             arr.add(t);
         }
 
@@ -86,9 +87,9 @@ public class ProblemaB2 {
 
         for (int i = 0; i < arr.size(); i++) {
             int suma = 0;
-            System.out.println("Arreglo "+ i);
+            // System.out.println("Arreglo "+ i);
             for (int j = 0; j < arr.get(i).size(); j++) {
-                System.out.println(arr.get(i).get(j));
+                // System.out.println(arr.get(i).get(j));
                 suma += arr.get(i).get(j);
             }
             if(max < suma)

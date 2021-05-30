@@ -25,9 +25,9 @@ public class GeneradorProblemaA {
 
     public static void main(String[] args) throws Exception {
 
-        n = 50;
-        r = 999;
-        m = 999;
+        n = 4;
+        r = 2;
+        m = 3;
 
         GeneradorProblemaA generador = new GeneradorProblemaA();
         generador.generar();
