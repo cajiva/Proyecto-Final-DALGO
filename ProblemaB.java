@@ -86,13 +86,5 @@ public class ProblemaB {
             } 
         }
         return n;
-    }
-
-
-
-
-
-
-
-    
+    }  
 }
