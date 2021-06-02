@@ -7,6 +7,7 @@ import java.util.Arrays;
 /**
  * Programa para calcular la potencia de una matriz usando matemática modular.
  * @author Catalina Jiménez Varón
+ * @author Daniel Beltran
  */
 
  public class ProblemaA {
@@ -104,9 +105,6 @@ import java.util.Arrays;
 
 		return potencia;
 	}
-
-
-
 
 	public int[][] multipMatrices(int[][] a, int[][] b, int m)
 	{

@@ -87,9 +87,9 @@ public class ProblemaB2 {
 
         for (int i = 0; i < arr.size(); i++) {
             int suma = 0;
-            // System.out.println("Arreglo "+ i);
+            System.out.println("Arreglo "+ i);
             for (int j = 0; j < arr.get(i).size(); j++) {
-                // System.out.println(arr.get(i).get(j));
+                System.out.println(arr.get(i).get(j));
                 suma += arr.get(i).get(j);
             }
             if(max < suma)

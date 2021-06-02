@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ProblemaA",
+            "request": "launch",
+            "mainClass": "ProblemaA",
+            "projectName": "Proyecto-Final-DALGO_3905d4d7"
+        },
+        {
+            "type": "java",
             "name": "Launch GeneradorB",
             "request": "launch",
             "mainClass": "GeneradorB",
