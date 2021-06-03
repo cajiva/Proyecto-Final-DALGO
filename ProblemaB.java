@@ -50,11 +50,17 @@ public class ProblemaB {
             sup += a[i];
         }
 
+        if(p == 1)
+            return sup;
+        
         int inf = 0;
         for (int i = 0; i < a.length; i++) {
             if(a[i] > inf)
             inf = a[i];
         }
+
+        if(p >= a.length)
+            return inf;
 
         while(inf < sup){
             int mit = inf + (sup-inf)/2;
