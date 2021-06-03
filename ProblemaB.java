@@ -45,35 +45,34 @@ public class ProblemaB {
 
     public int buscaCota(int a[], int p){
 
-        int upper = 0;
+        int sup = 0;
         for (int i = 0; i < a.length; i++) {
-            upper += a[i];
+            sup += a[i];
         }
 
-        int lower = 0;
+        int inf = 0;
         for (int i = 0; i < a.length; i++) {
-            if(a[i] > lower)
-                lower = a[i];
+            if(a[i] > inf)
+            inf = a[i];
         }
 
-        while(lower < upper){
-            int mid = lower + (upper-lower)/2;
+        while(inf < sup){
+            int mit = inf + (sup-inf)/2;
 
-            if(cantProcesadores(a, mid) <= p)
-                upper = mid;
+            if(cantProcesadores(a, mit) <= p)
+            sup = mit;
 
             else
-                lower = mid+1;
+            inf = mit+1;
 
         }
 
-        return lower;
+        return inf;
     }
 
     //ret. cantidad de procesadores necesarios n para que el max
     //sea la cota pasada. Donde r es la cota.
-    public int cantProcesadores(int a[], int r)
-    {
+    public int cantProcesadores(int a[], int r){
         int acum = 0;
         int n = 1;
 
