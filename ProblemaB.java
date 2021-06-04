@@ -36,14 +36,14 @@ public class ProblemaB {
                     throw new Exception("El tamaño del arreglo no es n.");
                 
                 else
-                    System.out.println(instancia.buscaCota(tiempos,p));
+                    System.out.println(instancia.buscaMinima(tiempos,p));
 
 				line = br.readLine();
 			}
 		}
 	}
 
-    public int buscaCota(int a[], int p){
+    public int buscaMinima(int a[], int p){
 
         int sup = 0;
         for (int i = 0; i < a.length; i++) {
