@@ -12,12 +12,12 @@ import java.util.Arrays;
  * @author Daniel Beltran
  */
 
-public class ProblemaB {
+public class ProblB {
 
     static int n,p;
 
     public static void main(String[] args) throws Exception {
-        ProblemaB instancia = new ProblemaB();
+        ProblB instancia = new ProblB();
 		try ( 
 			InputStreamReader is= new InputStreamReader(System.in);
 			BufferedReader br = new BufferedReader(is);
@@ -65,7 +65,7 @@ public class ProblemaB {
         while(inf < sup){
             int mit = inf + (sup-inf)/2;
 
-            if(esSolucion(a, mit, p))
+            if(cantProcesadores(a, mit) <= p)
             sup = mit;
 
             else
@@ -76,10 +76,9 @@ public class ProblemaB {
         return inf;
     }
 
-
-    public boolean esSolucion(int a[], int r, int p){
-
-        boolean esSolucion = false;
+    //ret. cantidad de procesadores necesarios n para que el max
+    //sea la cota pasada. Donde r es la cota.
+    public int cantProcesadores(int a[], int r){
         int acum = 0;
         int n = 1;
 
@@ -91,10 +90,6 @@ public class ProblemaB {
                 acum = a[i];
             } 
         }
-        
-        if(n <= p)
-            esSolucion = true;
-
-        return esSolucion;  
-    }
+        return n;
+    }  
 }
