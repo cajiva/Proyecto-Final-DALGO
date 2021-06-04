@@ -37,10 +37,6 @@ import java.util.Arrays;
 
 				int[][] potencias = instancia.potenciar(matriz, r, m);
 				
-				System.out.println();
-				System.out.println("Resultado:");
-				System.out.println();
-
 				for (int i = 0; i < potencias.length; i++) {
 					for (int j = 0; j < potencias.length; j++) {
 						System.out.print(potencias[i][j] + " ");

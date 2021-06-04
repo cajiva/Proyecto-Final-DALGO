@@ -16,21 +16,18 @@ public class GeneradorProblemaA {
                     System.out.print(ThreadLocalRandom.current().nextInt(0,51)+" ");       
             }
         }
-        System.out.println("0 0 0");
     }
-
-
-
-
 
     public static void main(String[] args) throws Exception {
 
-        n = 4;
-        r = 2;
-        m = 3;
-
         GeneradorProblemaA generador = new GeneradorProblemaA();
-        generador.generar();
+        for (int i = 0; i < 15; i++) {
+            n = ThreadLocalRandom.current().nextInt(1,50);
+            r = ThreadLocalRandom.current().nextInt(0,1000);
+            m = ThreadLocalRandom.current().nextInt(2,1000);
+            generador.generar(); 
+        } 
+        System.out.println("0 0 0");
     }
 }
 
